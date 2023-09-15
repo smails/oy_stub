@@ -1,26 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <Btn />
+    <Input />
+    <DoubleBtn />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Btn from './components/theme_btn.vue'
+import Input from './components/theme_input.vue'
+import DoubleBtn from './components/theme_double_btn.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Btn,
+    Input,
+    DoubleBtn,
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

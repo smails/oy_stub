@@ -1,4 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import './assets/sass/_global.sass'
+
+import PrimeVue from 'primevue/config';
+import "primevue/resources/themes/lara-light-indigo/theme.css";
+
+
+
+const app = createApp(App);
+app.use(PrimeVue);
+app.mount('#app');
