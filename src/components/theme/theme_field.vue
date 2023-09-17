@@ -29,6 +29,7 @@ export default {
   font-size: 18px;
   box-sizing: border-box;
   font-family: var(--font);
+  background: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
