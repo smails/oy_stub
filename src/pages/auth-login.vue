@@ -36,17 +36,48 @@
         </svg>
       </router-link>
     </main>
+    <Dialog v-model:visible="visible" modal header="Выберите свою роль" :style="{ width: '740px' }" :pt="styleDialog"
+      :breakpoints="{ '960px': '75vw', '641px': '100vw' }">
+      <template #closebuttonicon>
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path opacity="0.4" d="M1 1L21 21M1 21L21 1" stroke="#272B32" />
+        </svg>
+      </template>
+      <div class="oy-double-btns">
+        <label class="oy-double-btn">
+          <input type="radio" name="type" checked>
+          <span>Заказчик</span>
+        </label>
+        <label class="oy-double-btn">
+          <input type="radio" name="type">
+          <span>Партнёр</span>
+        </label>
+      </div>
+    </Dialog>
   </div>
 </template>
 
 <script>
+import Dialog from 'primevue/dialog';
 export default {
   name: 'auth',
   data() {
     return {
       viewPassword: true,
+      visible: true,
+      styleDialog: {
+        header: {
+          class: ['oy-dialog-header']
+        },
+        content: {
+          class: ['oy-dialog-content']
+        },
+      }
     }
   },
+  components: {
+    Dialog
+  }
 }
 </script>
 

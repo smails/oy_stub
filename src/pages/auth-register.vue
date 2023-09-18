@@ -73,7 +73,7 @@
             </div>
           </div>
         </div>
-        <button class="oy-btn oy-btn--arrow w-full" @click="step++">
+        <button class="oy-btn oy-btn--arrow w-full" @click="visible = true">
           <span>Зарегистрироваться</span>
           <svg width="7" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="m1 1 4.327 5.048a3 3 0 0 1 0 3.904L1 15" stroke="#E4E4E4" stroke-width="1.6" />
@@ -82,20 +82,42 @@
       </div>
     </main>
   </div>
+  <Dialog v-model:visible="visible" modal header="Вы зарегистрированы" :style="{ width: '740px' }" :pt="styleDialog"
+    :breakpoints="{ '960px': '75vw', '641px': '100vw' }">
+    <template #closebuttonicon>
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path opacity="0.4" d="M1 1L21 21M1 21L21 1" stroke="#272B32" />
+      </svg>
+    </template>
+    <router-link class="oy-btn oy-btn--center w-full" to="/auth/login">
+      <span>Войти</span>
+    </router-link>
+  </Dialog>
 </template>
 
 <script>
 import VOtpInput from 'vue3-otp-input';
+import Dialog from 'primevue/dialog';
 export default {
   name: 'auth',
   data() {
     return {
       viewPassword: true,
       step: 1,
+      visible: false,
+      styleDialog: {
+        header: {
+          class: ['oy-dialog-header']
+        },
+        content: {
+          class: ['oy-dialog-content']
+        },
+      }
     }
   },
   components: {
     VOtpInput,
+    Dialog
   },
 }
 </script>

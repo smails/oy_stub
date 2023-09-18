@@ -1,0 +1,143 @@
+.oy-sidebar {
+  padding: 30px 20px 20px;
+  width: 360px;
+  flex-shrink: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #191C22;
+  gap: 20px;
+
+  &-top {
+    text-align: center;
+  }
+
+  &-logo {
+    max-width: 100%;
+  }
+
+  &-nav {
+    flex-grow: 1;
+    padding-top: clamp(0px, 8vh, 75px);
+  }
+
+  &-list {
+    margin: 0;
+    list-style: none;
+    margin: 0 30px;
+    padding-left: 0;
+
+    &+.oy-sidebar-list {
+      border-top: 1px solid rgba(255, 255, 255, 0.20);
+      padding-top: 40px;
+    }
+  }
+
+  &-item {
+    margin-bottom: clamp(10px, 3.8vh, 40px);
+
+  }
+
+  &-link {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.2;
+    text-decoration: none;
+    transition: .5s ease;
+
+    svg {
+      vertical-align: middle;
+
+      path {
+        transition: .5s ease;
+      }
+    }
+
+    &:hover {
+      path {
+        fill-opacity: 1;
+      }
+    }
+
+    &.router-link-active {
+      color: var(--soft-purple-on-black);
+
+      path {
+        fill: var(--soft-purple-on-black);
+        fill-opacity: 1;
+      }
+    }
+  }
+
+  &-cofig-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--soft-gradient);
+    border-radius: var(--border-radius-20);
+    padding: 24px 20px;
+    font-weight: 500;
+    color: var(--white);
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      content: '';
+      width: 0;
+      height: 100%;
+      background: linear-gradient(95deg, #E2A1BF 0%, #D37DE9 50.35%, #B563E9 100%);
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      border-radius: 17px;
+      transition: .3s ease;
+      opacity: 0;
+    }
+
+    &:hover {
+      &:before {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+
+  &-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--white-40);
+    padding: 14px 30px;
+    color: var(--white);
+    gap: 20px;
+    border-radius: var(--border-radius-20);
+
+    span {
+      flex-grow: 1;
+    }
+
+    &-setting {
+      height: 44px;
+      border-radius: 10px;
+      background: var(--black);
+      cursor: pointer;
+      transition: .5s ease;
+
+      svg {
+        vertical-align: middle;
+      }
+
+      &:hover {
+        background: var(--black-70);
+      }
+    }
+  }
+}

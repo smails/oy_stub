@@ -1,3 +1,14 @@
+/*это нужно будет удалить, я не понял откуда эти стиль у вас, поэтому сохранил класс для визуала*/
+.w-half {
+  width: 50%
+}
+
+.w-full {
+  width: 100%
+}
+
+/*это нужно будет удалить, я не понял откуда эти стиль у вас, поэтому сохранил класс для визуала*/
+
 body {
   font-size: 16px;
   font-family: var(--font);
@@ -30,6 +41,8 @@ body {
   font-size: 18px;
   transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
   cursor: pointer;
+  text-decoration: none;
+  color: var(--black);
 
   svg {
     position: relative;
@@ -86,13 +99,56 @@ body {
 
 }
 
-/*это нужно будет удалить, я не понял откуда эти стиль у вас, поэтому сохранил класс для визуала*/
-.w-half {
-  width: 50%
+.oy-main {
+  background: #191C22;
+  display: flex;
+
+  &-container {
+    flex-grow: 1;
+    background: var(--bg);
+    border-radius: 20px 0px 0px 20px;
+    max-height: 100dvh;
+    overflow: auto;
+    padding: 37px 50px;
+  }
+
+  &-title {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: clamp(80px, 12vh, 120px);
+    margin-bottom: clamp(40px, 10vh, 95px);
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
 }
 
-.w-full {
-  width: 100%
+.p-component-overlay {
+  background-color: var(--black-40) !important;
 }
 
-/*это нужно будет удалить, я не понял откуда эти стиль у вас, поэтому сохранил класс для визуала*/
+.p-dialog {
+  border-radius: var(--border-radius-20) !important;
+  background: var(--bg) !important;
+
+  .p-dialog-header.oy-dialog-header {
+    background: var(--bg);
+    border-radius: 20px 20px 0 0;
+    padding: 20px 20px 65px;
+
+    .p-dialog-title {
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1.2;
+      font-family: var(--font);
+    }
+  }
+
+  .p-dialog-content.oy-dialog-content {
+    padding: 0 20px 20px;
+    font-family: var(--font);
+    background: var(--bg);
+  }
+}
